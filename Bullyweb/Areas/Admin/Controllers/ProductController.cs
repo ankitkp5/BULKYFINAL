@@ -2,14 +2,16 @@
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.models;
 using Bulky.models.ViewModels;
+using Bulky.utility;
 using Bullyweb.DataAccess.Data;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Bullyweb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
